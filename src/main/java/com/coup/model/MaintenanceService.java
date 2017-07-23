@@ -27,16 +27,6 @@ public class MaintenanceService {
 		if(districts.size()>0){
 			districts.get(managerDistrict).setManagerAlocated(true);
 		}
-		for (District d : districts) {
-			System.out.println("\n");
-			System.out.println("DISTRITO: "+d.getId());
-			System.out.println("Number of Scooters: "+d.getScooters());
-			System.out.println("Manager Present: "+d.isManagerAlocated()+(d.isManagerAlocated() ? " ("+getFleetManagerCapacity()+") " : ""));
-			int engineersNeeded = d.getEngineersNeeded();
-			System.out.println("Engineers Needed: "+engineersNeeded+" ("+getFleetEngineerCapacity()*engineersNeeded+")");
-			System.out.println("Waste with manager only: "+d.getWasteWithManagerOnly());
-			System.out.println("\n");
-		}
 	}
 	
 	public int getManagerDistrict(){
