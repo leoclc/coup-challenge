@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Home - Coup Challenge</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <p>
+    	Paste JSON
+    </p>
+    <form>
+	    <input class="js-ajax-text"  type="text"  />
+	    <input class="js-ajax-submit"  type="button" value="Submit" />
+    </form>
+    <div>
+    	<p class="js-result"></p>
+    </div>
+	<script type="text/javascript" src="webjars/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$( document ).ready(function() {
+			$(".js-ajax-submit").click(function(){
+				ajaxCall($(this).closest("form").find(".js-ajax-text").val());
+			});
+		});
+		function ajaxCall(json){
+			$.ajax({ 
+			    url: "/coup",    
+			    type:"POST", 
+			    contentType: "application/json; charset=utf-8",
+			    data: JSON.stringify(json), 
+			    success: function(resposeJsonObject){
+			    	$(".js-result").text(resposeJsonObject);
+			    }
+			});
+		}
+	</script>
+</body>
+</html>
