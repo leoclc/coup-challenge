@@ -15,9 +15,7 @@ mvn spring-boot:run
 
 ## Running 
 
-localhost:8080/ goes to home
-
-paste json and submit from home html 
+http://localhost:8080/  
 
 JSON Example: 
 
